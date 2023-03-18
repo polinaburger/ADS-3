@@ -13,29 +13,36 @@ int sort(int* arr, int size) {
   return *arr;
 }
 
+
 int cbinsearch(int *arr, int size, int value) {
-  sort(arr, size);
-  int izmeritel = size/2;
-  while (true) {
-    if (arr[izmeritel] < value) {
-      izmeritel = - (izmeritel/2) + size;
-    } else if (arr[izmeritel] > value) {
-      izmeritel = izmeritel/2;
-    } else if (arr[izmeritel] == value) {
-      int counter = 1;
-      int one = izmeritel-1;
-      while (arr[one] == value) {
-        counter++;
-        one--;
-      }
-      int two = izmeritel+1;
-      while (arr[two] == value) {
-        counter++;
-        two++;
-      }
-      return counter;
-    } 
-  }
-  return 0;
+    sort(arr, size);
+    int left = - 1;
+    int right = size;
+    while (left < right - 1) {
+        int izmeritel = (left+right)/2;
+        if (arr[izmeritel] < value) {
+            left = izmeritel;
+        }
+        else if (arr[izmeritel] > value) {
+            right=izmeritel;
+        }
+        else if (arr[izmeritel] == value) {
+            int counter =1;
+            int one=izmeritel-1;
+            while ( arr[one] == value) {
+                counter++;
+                one--;
+            }
+            int two=izmeritel+1;
+            while ( arr[two] == value) {
+                counter++;
+                two++;
+            }
+            return counter;
+        }
+
+    }
+    return 0;
 }
+
 
