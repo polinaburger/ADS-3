@@ -10,7 +10,7 @@ int sort(int* arr, int size) {
       }
     }
   }
-  return arr*;
+  return *arr;
 }
 
 int cbinsearch(int *arr, int size, int value) {
