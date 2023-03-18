@@ -22,19 +22,17 @@ int cbinsearch(int *arr, int size, int value) {
         int izmeritel = (left+right)/2;
         if (arr[izmeritel] < value) {
             left = izmeritel;
-        }
-        else if (arr[izmeritel] > value) {
-            right=izmeritel;
-        }
-        else if (arr[izmeritel] == value) {
-            int counter =1;
-            int one=izmeritel-1;
-            while ( arr[one] == value) {
+        } else if (arr[izmeritel] > value) {
+            right = izmeritel;
+        } else if (arr[izmeritel] == value) {
+            int counter = 1;
+            int one = izmeritel-1;
+            while (arr[one] == value) {
                 counter++;
                 one--;
             }
             int two=izmeritel+1;
-            while ( arr[two] == value) {
+            while (arr[two] == value) {
                 counter++;
                 two++;
             }
@@ -42,7 +40,5 @@ int cbinsearch(int *arr, int size, int value) {
         }
 
     }
-    return 0;
+  return 0;
 }
-
-
