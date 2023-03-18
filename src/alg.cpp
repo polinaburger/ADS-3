@@ -31,14 +31,13 @@ int cbinsearch(int *arr, int size, int value) {
                 counter++;
                 one--;
             }
-            int two=izmeritel+1;
+            int two = izmeritel+1;
             while (arr[two] == value) {
                 counter++;
                 two++;
             }
             return counter;
         }
-
     }
   return 0;
 }
