@@ -34,9 +34,8 @@ int cbinsearch(int *arr, int size, int value) {
         two++;
       }
       return counter;
-    } else {
-      return 0;
-    }
+    } 
   }
+  return 0;
 }
 
